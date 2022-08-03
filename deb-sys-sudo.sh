@@ -212,7 +212,7 @@ echo
             sudo aptitude install build-essential cmake libkf5config-dev libkdecorations2-dev libqt5x11extras5-dev qtdeclarative5-dev extra-cmake-modules libkf5guiaddons-dev libkf5configwidgets-dev libkf5windowsystem-dev libkf5coreaddons-dev libkf5iconthemes-dev gettext -y
             # killall nextcloud
             git clone --single-branch --depth=1 https://github.com/Luwx/Lightly.git
-            cd Lightly && mkdir build && cd build
+            cd Lightly && mkdir build && cd build || exit
             cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DBUILD_TESTING=OFF ..
             make
             sudo make install
