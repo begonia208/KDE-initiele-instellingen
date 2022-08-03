@@ -9,7 +9,7 @@ Steek de micro-ontvangers in een usb-hub.
 Tien cm. weg van de computer (in een hub bijv.) dan beweegt de muis
 vloeiend en doet het toetsenbord precies wat je wilt. 
 
-DRUK SPATIEBALK\n' -n 1 key
+DRUK SPATIEBALK\n' -n 1 
 #
 echo
         killall latte-dock
@@ -169,7 +169,7 @@ echo
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     rm ~/.config/latte/*.layout.latte
-                    cp * ~/.config/latte/templates/* ~/.config/latte/
+                    cp ./*glob* ~/.config/latte/templates/* ~/.config/latte/
                 fi
                 fi
         fi
