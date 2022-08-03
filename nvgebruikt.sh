@@ -1,3 +1,4 @@
+#!/bin/bash
 # #
 # echo
 # #
@@ -209,16 +210,16 @@ echo
             git clone https://github.com/matinlotfali/KDE-Rounded-Corners
            # cd LightlyShaders 
            # mkdir qt5build
-            cd KDE-Rounded-Corners
+            cd KDE-Rounded-Corners || exit
             mkdir qt5build
-            cd qt5build
+            cd qt5build || exit
             sudo ln /usr/share/bash-completion/completions/gmake /usr/bin
             cmake ../ -DCMAKE_INSTALL_PREFIX=/usr -DQT5BUILD=ON && 
             make && 
             sudo make install &&
            # (kwin_x11 --replace &)
             cd ..
-            cd ..
+            (cd ..)
             sudo rm -r KDE-Rounded-Corners
             # sudo rm -r KDE-Rounded-Corners
             # o fully uninstall, simply run the command sudo make uninstall inside qt5build directory
