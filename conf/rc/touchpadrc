@@ -1,0 +1,5 @@
+[autodisable]
+DisableWhenMousePluggedIn=true
+
+[parameters]
+Tapping=true

@@ -1,0 +1,32 @@
+[Agenda View]
+AgendaViewColors=ResourceOnly
+Hour Size=15
+
+[Calendar]
+Default Calendar=-1
+
+[Internal Settings]
+DefaultResourceColorSeed=5
+
+[Migratekde4]
+Version=1
+
+[Month View]
+MonthViewColors=MonthItemResourceOnly
+
+[Timescale]
+Timescale Timezones=
+
+[TodoTreeViewState]
+Current=x-1
+Expansion=
+HorizontalScroll=0
+Selection=
+VerticalScroll=0
+
+[TodoTreeViewStateS]
+Current=x-1
+Expansion=
+HorizontalScroll=0
+Selection=
+VerticalScroll=0

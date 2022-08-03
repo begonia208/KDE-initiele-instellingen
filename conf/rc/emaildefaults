@@ -1,0 +1,11 @@
+[Defaults]
+Profile=Standaard
+
+[PROFILE_Standaard]
+EmailAddress=
+EmailClient[$e]=thunderbird.desktop
+FullName=pieter
+Organization=
+ReplyAddr=
+ServerType=
+TerminalClient=false

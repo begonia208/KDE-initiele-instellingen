@@ -1,0 +1,12 @@
+[Applications][firefox]
+Seen=true
+
+[Applications][thunderbird]
+Seen=true
+
+[Jobs]
+PermanentPopups=false
+
+[Notifications]
+PopupPosition=BottomRight
+PopupTimeout=2000
