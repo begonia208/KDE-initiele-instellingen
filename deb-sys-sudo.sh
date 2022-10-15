@@ -19,6 +19,9 @@ echo
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
     #
+    
+    
+    
             sudo apt install aptitude &&
     #
         # de programma's
