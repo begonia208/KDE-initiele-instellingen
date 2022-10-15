@@ -1,7 +1,7 @@
 #!/bin/bash
-#
+
 echo
-#
+
     # update/upgrade
         read -p "update/upgrade? j/n " -n 1 -r
         echo    # (optional) move to a new line
@@ -10,9 +10,9 @@ echo
             sudo pkcon refresh
             sudo pkcon update
         fi
-#
+
 echo 
-#
+
     # ontbrekende software
         read -p "ontbrekende software? j/n " -n 1 -r
         echo    # (optional) move to a new line
@@ -33,9 +33,9 @@ echo
             # matrix "skins" (clients) https://matrix.org/clients/
             # backup oplossing: backintime
         fi
-#
+
 echo
-#
+
     # LO en LO ppa
         echo
         read -p "NEON: libreoffice-ppa? j/n (advies: ja)   " -n 1 -r
@@ -48,9 +48,9 @@ echo
             sudo apt full-upgrade
             sudo apt autoremove
         fi
-#
+
 echo
-#
+
     # LO thema's en rest installatie
         echo
         read -p "libreoffice-thema's toevoegen en rest? j/n (advies: ja)   " -n 1 -r
@@ -72,9 +72,9 @@ echo
             sudo aptitude install wine64 wine32 winetricks -y
             apt-cache policy libncurses6:i386
         fi
-#
+
 echo
-#
+
     # tlp
         read -p "tlp installeren (systeem minder warm)? j/n " -n 1 -r
         echo    # (optional) move to a new line
@@ -84,9 +84,9 @@ echo
             sudo systemctl enable tlp.service
             sudo tlp start
         fi
-#
+
 echo
-#
+
     # extra fonts
     echo
         read -p "Extra letter-fonts installeren? j/n " -n 1 -r
@@ -98,9 +98,9 @@ echo
             tar zxf conf/artwork/fonts.tar.gz -C ~/.local/share/fonts/
             fc-cache -f -v
         fi
-#
+
 echo
-#                
+                
     # wifi uit spaarstand
         echo
         read -p "valt de wifi weleens uit j/n? (advies:ja)   " -n 1 -r
@@ -109,9 +109,9 @@ echo
         then
             sudo sed -i 's/wifi.powersave = 3/wifi.powersave = 2/g' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
         fi
-#
+
 echo
-#
+
     # libdvdcss
         echo
         read -p "libdvdcss installeren? j/n " -n 1 -r
@@ -121,9 +121,9 @@ echo
             sudo aptitude install libdvd-pkg -y
             sudo dpkg-reconfigure libdvd-pkg
         fi
-#
+
 echo
-#
+
     # Nextcloud client
         echo
         read -p "Dolphin Nextcloud client installeren? j/n " -n 1 -r
@@ -133,9 +133,9 @@ echo
             sudo aptitude install dolphin-nextcloud -y
             mkdir ~/.config/autostart/
         fi
-#
+
 echo
-#
+
     # skype
         read -p "Skype installeren? j/n " -n 1 -r
         echo    # (optional) move to a new line
@@ -146,9 +146,9 @@ echo
             sudo apt --fix-broken install -y
             mv ~/skype.deb ~/Downloads
         fi
-#
+
 echo
-#
+
     # teamviewer
         read -p "Teamviewer installeren? j/n " -n 1 -r
         echo    # (optional) move to a new line
