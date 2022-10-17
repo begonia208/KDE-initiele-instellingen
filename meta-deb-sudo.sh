@@ -20,5 +20,5 @@ echo
 #
 echo
 #
-read -rsp $'Einde
+echo read -rsp $'Einde
 \n' -n 1 key

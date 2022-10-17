@@ -3,7 +3,7 @@
 #
 clear
 echo
-read -rsp $'Gebruik je een (Logitech) toetsenbord en muis zonder draad? 
+echo read -rsp $'Gebruik je een (Logitech) toetsenbord en muis zonder draad? 
 Steek de micro-ontvangers in een usb-hub. 
 
 Tien cm. weg van de computer (in een hub bijv.) dan beweegt de muis
