@@ -7,7 +7,7 @@
        then
           rm -r conf/
        fi
-read -p "Druk op Enter om door te gaan"
+read -r -p "Druk op Enter om door te gaan"
 mkdir extra/
 mkdir -p conf/apps/audacious/Skins/
 mkdir conf/apps/krusader/
@@ -94,9 +94,8 @@ cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
         echo    # (optional) move to a new line
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
-            cd ~/.local/share/icons
-            tar -zcvf icons.tar.gz *
-            cd -
+            cd ~/.local/share/icons/ || exit
+            tar -zcvf icons.tar.gz ./* 
             mv ~/.local/share/icons/icons.tar.gz ./
             mv icons.tar.gz extra/
             fi

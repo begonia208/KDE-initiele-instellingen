@@ -289,7 +289,7 @@ echo
         then
             #
             # klein spul
-                cp conf/desktop-user/rc/
+                cp conf/desktop-user/rc/ ~/.config/
             #
             # desktopfiles
                 cp -r conf/apps/desktopfiles ~/.local/share/applications/
