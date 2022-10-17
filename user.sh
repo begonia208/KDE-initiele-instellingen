@@ -85,7 +85,7 @@ echo
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                    rm -r ~/.local/share/kactivitymanagerd
+                    rm -r ~/.local/share/kactivitymanagerd/*
                     cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
                 fi
         #
