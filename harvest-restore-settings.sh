@@ -1,12 +1,21 @@
 #!/bin/bash
 
-# harvesting
-
-cp ~/.config/* Plasma/desktop-user/conf/rc/
+# leegmaken
+       read -p "mappen leegmaken j/n " -n 1 -r
+       echo    # (optional) move to a new line
+       if [[ $REPLY =~ ^[YyJj]$ ]]
+       then
+          rm -r conf/
+       fi
+read -p "Druk op Enter om door te gaan"
+mkdir extra/
 mkdir -p conf/apps/audacious/Skins/
 mkdir conf/apps/krusader/
-mkdir conf/apps/dolphin/
-mkdir conf/apps/kde/
+mkdir -p conf/apps/kde/plasma/
+mkdir -p conf/apps/dolphin/ServiceMenus/
+mkdir conf/apps/desktopfiles/
+mkdir conf/apps/kde/plasma/
+mkdir conf/apps/k3b/
 mkdir conf/apps/kickoff/
 mkdir conf/apps/kmail/
 mkdir conf/apps/SpeedCrunch/
@@ -50,7 +59,7 @@ cp -r ~/.local/share/kactivitymanagerd/* conf/apps/kickoff/
 cp ~/.local/share/dolphin/dolphinstaterc conf/apps/dolphin/
 cp ~/.config/session/dolphin_dolphin_dolphin conf/apps/dolphin/
 cp ~/.local/share/dolphin/view_properties/global/.directory conf/apps/dolphin/directory
-cp -r ~/.local/share/kservices5/ServiceMenus/* conf/apps/dolphin/directory
+cp -r ~/.local/share/kservices5/ServiceMenus/* conf/apps/dolphin/ServiceMenus/
 cp ~/.local/share/kxmlgui5/dolphin/dolphinui.rc conf/apps/dolphin/
 
 # konsole
@@ -65,28 +74,49 @@ cp ~/.config/GIMP/2.10/gimprc conf/rc/
 cp -r ~/.local/share/krusader/* conf/apps/krusader/
 
 # k3b
-cp -r ~/.local/share/k3b/* conf/apps/
+cp -r ~/.local/share/k3b/* conf/apps/k3b/
 
 # SpeedCrunch
 cp ~/.config/SpeedCrunch/SpeedCrunch.ini conf/apps/SpeedCrunch/
 
-# iconen
-cd ~/.local/share/icons
-tar -zcvf icons.tar.gz *
-cd -
-mv ~/.local/share/icons/icons.tar.gz ./
-mv icons.tar.gz conf/artwork/
+# desktopfiles
+cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
+
 
 # color-schemes
-cd -r ~/.local/share/color-schemes/* 
+cp -r ~/.local/share/color-schemes/* conf/artwork/color-schemes/
 
 # aurorae themes
 cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
 
-# plasma
 # iconen
-cd ~/.local/share/plasma
-tar -zcvf plasma.tar.gz *
-cd -
-mv ~/.local/share/plasma/plasma.tar.gz ./
-mv plasma.tar.gz conf/apps/kde/
+        read -p "iconen bewaren? j/n " -n 1 -r
+        echo    # (optional) move to a new line
+            if [[ $REPLY =~ ^[YyJj]$ ]]
+            then
+            cd ~/.local/share/icons
+            tar -zcvf icons.tar.gz *
+            cd -
+            mv ~/.local/share/icons/icons.tar.gz ./
+            mv icons.tar.gz extra/
+            fi
+            
+# plasma            
+cp -r ~/.local/share/plasma/* conf/apps/kde/plasma/
+
+# desktopfiles
+cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

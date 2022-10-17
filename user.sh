@@ -61,8 +61,8 @@ echo
                     mkdir -p ~/.config/libreofficedev/4/user/template/
                     cp conf/apps/lo/registrymodifications.xcu ~/.config/libreoffice/4/user/
                     cp conf/apps/lo/registrymodifications.xcu ~/.config/libreofficedev/4/user/
-                    cp conf/apps/lo/templates/standaardp.ott ~/.config/libreoffice/4/user/template/
-                    cp conf/apps/lo/templates/standaardp.ott ~/.config/libreofficedev/4/user/template/
+                    cp conf/apps/lo/templates/* ~/.config/libreoffice/4/user/template/
+                    cp conf/apps/lo/templates/* ~/.config/libreofficedev/4/user/template/
                 fi
         #
         echo
@@ -86,7 +86,7 @@ echo
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     rm -r ~/.local/share/kactivitymanagerd
-                    cp -r conf/apps/kickoff/kactivitymanagerd/* -C ~/.local/share/
+                    cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
                 fi
         #
         echo
@@ -109,9 +109,9 @@ echo
                 # kmail "header-theme"
                 rm -rv ~/.local/share/messageviewer/themes/*
                 mkdir -p ~/.local/share/messageviewer/themes/
-                tar -xf conf/artwork/material-reloaded.tar.gz -C ~/.local/share/messageviewer/themes
-                cp conf/rc/kmail2rc ~/.config/
-                cp conf/rc/emaildefaults ~/.config/
+                tar -xf extra/kmail/material-reloaded.tar.gz -C ~/.local/share/messageviewer/themes
+                cp extra/kmail/kmail2rc ~/.config/
+                cp extra/kmail/emaildefaults ~/.config/
                 fi
         #
         echo
@@ -122,7 +122,7 @@ echo
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     rm -r ~/.config/falkon/
-                    tar -xf conf/apps/falkon.tar.gz -C ~/.config/
+                    tar -xf extra/falkon.tar.gz -C ~/.config/
                 fi
         #
         echo
@@ -181,7 +181,7 @@ echo
                 # /.local/share/dolphin/dolphinstaterc
                     mkdir ~/.local/share/dolphin/
                     rm ~/.local/share/dolphin/dolphinstaterc
-                    cp conf/rc/dolphinstaterc ~/.local/share/dolphin/
+                    cp conf/apps/dolphin/dolphinstaterc ~/.local/share/dolphin/
                  
                 # /.config/session/dolphin_dolphin_dolphin 
                     rm ~/.config/session/dolphin_dolphin_dolphin
@@ -197,7 +197,7 @@ echo
                 # /.local/share/kservices5/ServiceMenus/    
                     mkdir -p ~/.local/share/kservices5/ServiceMenus/
                     rm -rv ~/.local/share/kservices5/ServiceMenus/*
-                    tar -xf conf/apps/dolphin/ServiceMenus.tar.gz -C ~/.local/share/kservices5/ServiceMenus/
+                    cp -r conf/apps/dolphin/ServiceMenus/* ~/.local/share/kservices5/ServiceMenus/
                     
                 # /.local/share/kxmlgui5/dolphinui.rc    
                     rm ~/.local/share/kxmlgui5/dolphin/*
@@ -231,10 +231,10 @@ echo
                 mkdir -p ~/.config/GIMP/2.10/
                 cp conf/rc/gimprc ~/.config/GIMP/2.10/
             # snap-mappen verbergen
-                cat > ~/.hidden
+                touch ~/.hidden
                 echo 'lost+found' >> ~/.hidden
                 echo 'snap' >> ~/.hidden
-                cat > ~/Downloads/.hidden
+                touch ~/Downloads/.hidden
                 echo 'firefox.tmp' >> ~/Downloads/.hidden
             # krusader
                 rm -r ~/.local/share/krusader/
@@ -243,7 +243,8 @@ echo
                 sed -i "s/gebruiker/$USER/g" ~/.config/krusaderrc
             # k3b
                 rm -r ~/.local/share/k3b/
-                cp -r conf/apps/k3b/* ~/.local/share/
+                mkdir ~/.local/share/k3b/
+                cp -r conf/apps/k3b/* ~/.local/share/k3b/
             # SpeedCrunch
                 mkdir ~/.config/SpeedCrunch/
                 cp conf/apps/SpeedCrunch/SpeedCrunch.ini ~/.config/SpeedCrunch/
@@ -272,7 +273,7 @@ echo
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
                 mkdir ~/.local/share/icons
-                tar -xvf conf/artwork/icons.tar.gz -C ~/.local/share/icons/
+                tar -xvf extra/icons.tar.gz -C ~/.local/share/icons/
                 # tar -xf conf/artwork/icons.tar.xz -C ~/.local/share/icons/
                 # rm conf/artwork/icons.tar
                 # ook: suru-plus https://github.com/gusbemacbe/suru-plus
@@ -290,6 +291,9 @@ echo
             # klein spul
                 cp conf/desktop-user/rc/
             #
+            # desktopfiles
+                cp -r conf/apps/desktopfiles ~/.local/share/applications/
+            #
             # kleurenschemas
                 mkdir ~/.local/share/color-schemes/
                 cp conf/artwork/color-schemes/* ~/.local/share/color-schemes/
@@ -300,8 +304,9 @@ echo
             #
             # plasma
                 mkdir -p ~/.local/share/plasma/
-                tar -xf conf/apps/kde/plasma.tar.gz -C ~/.local/share/plasma/
-                # globaal thema Vesuvius
+                cp -r conf/apps/kde/plasma/* ~/.local/share/plasma/
+            #
+            # globaal thema Vesuvius
                     read -p "Globaal thema Vesuvius toepassen? j/n " -n 1 -r
                     echo    # (optional) move to a new line
                     if [[ $REPLY =~ ^[YyJj]$ ]]
