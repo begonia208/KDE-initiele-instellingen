@@ -73,9 +73,9 @@ echo
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     mkdir -p  ~/.local/share/audacious/Skins/
-                    cp -r conf/apps/audacious/Skins/* -C ~/.local/share/audacious/Skins/
+                    cp -r conf/apps/audacious/* ~/.local/share/audacious/
                     mkdir ~/.config/audacious/
-                    cp conf/apps/audacious/* ~/.config/audacious/
+                    cp -r conf/apps/audacious/Skins/ ~/.local/share/audacious/
                 fi
         #
         echo
@@ -86,6 +86,7 @@ echo
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     rm -r ~/.local/share/kactivitymanagerd/*
+                    mkdir -p ~/.local/share/kactivitymanagerd/
                     cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
                 fi
         #
@@ -289,7 +290,7 @@ echo
         then
             #
             # klein spul
-                cp conf/desktop-user/rc/ ~/.config/
+                cp conf/rc/* ~/.config/
             #
             # desktopfiles
                 cp -r conf/apps/desktopfiles ~/.local/share/applications/

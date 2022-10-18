@@ -14,7 +14,6 @@ mkdir conf/apps/krusader/
 mkdir -p conf/apps/kde/plasma/
 mkdir -p conf/apps/dolphin/ServiceMenus/
 mkdir conf/apps/desktopfiles/
-mkdir conf/apps/kde/plasma/
 mkdir conf/apps/k3b/
 mkdir conf/apps/kickoff/
 mkdir conf/apps/kmail/
