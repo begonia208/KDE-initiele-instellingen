@@ -223,18 +223,6 @@ echo
 #
 echo
 #
-    # sddm thema chili regelen
-        read -p "Het prachtige SDDM-thema c h i l i  installeren en activeren? (advies: ja) j/n " -n 1 -r
-        echo    # (optional) move to a new line
-        if [[ $REPLY =~ ^[YyJj]$ ]]
-        then
-            sudo mv /etc/sddm.conf /etc/sddm.conf.oud
-            sudo cp conf/artwork/sddm/sddm.conf /etc/
-            sudo tar -xf conf/artwork/sddm/plasma-chili.tar.gz -C /usr/share/sddm/themes/
-        fi
-#
-echo
-#
     # autoremove
         read -p "autoremove? j/n " -n 1 -r
         echo    # (optional) move to a new line
