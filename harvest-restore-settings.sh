@@ -8,30 +8,21 @@
           rm -r conf/
        fi
 read -r -p "Druk op Enter om door te gaan"
+
 mkdir extra/
 mkdir -p conf/apps/audacious/Skins/
-mkdir conf/apps/krusader/
-mkdir -p conf/apps/kde/plasma/
-mkdir -p conf/apps/dolphin/ServiceMenus/
 mkdir conf/apps/desktopfiles/
+mkdir -p conf/apps/dolphin/ServiceMenus/
 mkdir conf/apps/k3b/
 mkdir conf/apps/kickoff/
-mkdir conf/apps/kmail/
-mkdir conf/apps/SpeedCrunch/
 mkdir conf/apps/konsole/
+mkdir conf/apps/krusader/
+mkdir -p conf/apps/kde/plasma/
+mkdir conf/apps/SpeedCrunch/
 mkdir -p conf/apps/lo/templates/
-mkdir -p conf/apps/kickoff/
-mkdir conf/apps/konsole
 
-mkdir -p conf/artwork/plasma-layout/knutselcomp/ubuntu-look/
-mkdir conf/artwork/plasma-layout/knutselcomp/vesuvius/
-mkdir conf/artwork/plasma-layout/knutselcomp/standardconf/
-mkdir conf/artwork/color-schemes/
 mkdir conf/artwork/aurorae/
-
-mkdir -p conf/artwork/plasma-layout/surface/ubuntu-look/
-mkdir conf/artwork/plasma-layout/surface/vesuvius/
-mkdir conf/artwork/plasma-layout/surface/standardconf/
+mkdir conf/artwork/color-schemes/
 
 mkdir conf/rc/
 
@@ -95,6 +86,7 @@ cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
             then
             cd ~/.local/share/icons/ || exit
             tar -zcvf icons.tar.gz ./* 
+            cd -
             mv ~/.local/share/icons/icons.tar.gz ./
             mv icons.tar.gz extra/
             fi
