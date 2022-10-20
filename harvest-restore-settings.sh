@@ -21,7 +21,7 @@ mkdir -p conf/apps/kde/plasma/
 mkdir conf/apps/SpeedCrunch/
 mkdir -p conf/apps/lo/templates/
 
-mkdir conf/artwork/aurorae/
+mkdir -p conf/artwork/aurorae/
 mkdir conf/artwork/color-schemes/
 
 mkdir conf/rc/
