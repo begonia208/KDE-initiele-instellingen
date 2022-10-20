@@ -18,8 +18,8 @@ mkdir conf/apps/kickoff/
 mkdir conf/apps/konsole/
 mkdir conf/apps/krusader/
 mkdir -p conf/apps/kde/plasma/
-mkdir conf/apps/SpeedCrunch/
 mkdir -p conf/apps/lo/templates/
+mkdir conf/apps/SpeedCrunch/
 
 mkdir -p conf/artwork/aurorae/
 mkdir conf/artwork/color-schemes/
