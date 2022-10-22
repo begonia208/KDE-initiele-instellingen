@@ -2,49 +2,9 @@
 #
 #
 clear
-echo
-echo read -rsp $'Gebruik je een (Logitech) toetsenbord en muis zonder draad? 
-Steek de micro-ontvangers in een usb-hub. 
-
-Tien cm. weg van de computer (in een hub bijv.) dan beweegt de muis
-vloeiend en doet het toetsenbord precies wat je wilt. 
-
-DRUK SPATIEBALK\n' -n 1 key
-#
-echo
-    #    killall latte-dock
-    #
-    # mappen leeg?
-        read -p "Alles leeg? (advies: ja) j/n " -n 1 -r
-        echo    # (optional) move to a new line
-        if [[ $REPLY =~ ^[YyJj]$ ]]
-        then
-        rm -rv ~/.local/share/plasma/*
-        rm -rv ~/.local/share/aurorae/themes/*
-        rm -rv ~/.local/share/color-schemes/*
-        rm -v ~/.congig/kdeglobals
-        rm -v ~/.config/ksmserverrc
-        rm -v ~/.config/katerc
-        rm -v ~/.config/kwinrc
-        rm -v ~/.config/powermanagementprofilesrc
-        rm -v ~/.config/discoverrc
-        rm -v ~/.config/kscreenlockerrc
-        # rm -v ~/.config/kcm_touchpad.notifyrc
-        rm -v ~/.config/gwenviewrc
-        rm -v ~/.config/ksplashrc
-        rm -v ~/.config/lightlyrc
-        rm -v ~/.config/mimeapps.list
-        rm -v ~/.config/spectaclerc
-        rm -v ~/.config/systemsettingsrc
-        rm -v ~/.config/plasmanotifyrc
-        rm -v ~/.config/touchpadrc
-        fi
-#
-echo
-#
     # eerste keer op deze computer
     #           
-        read -p "Belangrijke programma-instellingen? j/n " -n 1 -r
+        read -p "Restore cutomizations of user applications? j/n " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
@@ -53,7 +13,7 @@ echo
         echo
         #
             # libreoffice registrymodifications
-                read -p "libreoffice registrymodifications (wordt niet automatisch gewist)? (advies: ja) j/n " -n 1 -r
+                read -p "libreoffice registrymodifications j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -68,7 +28,7 @@ echo
         echo
         #
             # Audacious
-                read -p "Audacious - skins - regelen (wordt niet automatisch gewist)? (advies: ja) j/n " -n 1 -r
+                read -p "Audacious skins j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -79,31 +39,9 @@ echo
                 fi
         #
         echo
-        # 
-            # kickoff favorieten
-                read -p "P's favorieten in het applicatie-menu (wordt niet automatisch gewist)? (advies: ja) j/n " -n 1 -r
-                echo    # (optional) move to a new line
-                if [[ $REPLY =~ ^[YyJj]$ ]]
-                then
-                    rm -r ~/.local/share/kactivitymanagerd/*
-                    mkdir -p ~/.local/share/kactivitymanagerd/
-                    cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
-                fi
-        #
-        echo
-        #
-            # desktopachtergronden op thuismachine
-                read -p "koppelen desktopachtergronden derest (wordt niet automatisch gewist)? j/n " -n 1 -r
-                echo    # (optional) move to a new line
-                if [[ $REPLY =~ ^[YyJj]$ ]]
-                then
-                    ln -s ~/Nextcloud/derest/installatie/scripts/prog-install/wallpapers/ ~/.local/share/
-                fi
-        #
-        echo
         #
             # kmail
-                read -p "Kmail netjes regelen (wordt niet automatisch gewist)? j/n " -n 1 -r
+                read -p "Kmail j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -118,44 +56,29 @@ echo
         echo
         #
             # falkon profiel P
-                read -p "falkon-profiel P (wordt niet automatisch gewist)? (wanneer je niet P bent: nee) j/n " -n 1 -r
+                read -p "falkon-profiel j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                     rm -r ~/.config/falkon/
                     tar -xf extra/falkon.tar.gz -C ~/.config/
                 fi
-        #
+       #
         echo
-        #
-            # Nextcloud client inrichten
-            echo
-                read -p "Nextcloud P? j/n " -n 1 -r
+        # 
+            # kickoff favorieten
+                read -p "Kickoff favorites j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                    nextcloud & disown
-                    killall nextcloud
-                    nextcloud & disown
-                    clear
-                    echo
-                    echo   kopieer het nextcloud desktop bestand naar ~/.config/autostart
-                    echo
-                    echo   invullen in Nextcloud-client: documenten.mijncloudoffice.nl
-                    echo
-                    echo   webadres: https://documenten.mijncloudoffice.nl/login
-                    echo
-                    echo   gebruikersnaam: pieterkristensen@gmail.com
-                    echo
-                    echo   ww.browser: fUEYGn3a9z48dwE?
-                    echo
-                    echo
-                    # cp conf/apps/com.nextcloud.desktopclient.nextcloud.desktop ~/.config/autostart/
+                    rm -r ~/.local/share/kactivitymanagerd/*
+                    mkdir -p ~/.local/share/kactivitymanagerd/
+                    cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
                 fi
         #
         echo
         #
-                read -p "Dolphin strippen? j/n " -n 1 -r
+                read -p "strip dolphin? j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -170,8 +93,8 @@ echo
         #
         echo
         #
-            # Dolphin opknappen
-                read -p "Dolphin uiterlijk tweaken? j/n " -n 1 -r
+            # customize dolphin
+                read -p "Dolphin j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -209,8 +132,8 @@ echo
         #
         echo
         #
-            # Konsole opknappen
-                read -p "Konsole tweaken? j/n " -n 1 -r
+            # customize Konsole
+                read -p "Konsole j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -223,7 +146,7 @@ echo
         echo
         #
             # "finishing touch"
-                read -p "Echt afmaken - snapmappen verborgen, krusader en nog wat (advies: ja) j/n " -n 1 -r
+                read -p "finishing touch j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
@@ -254,14 +177,14 @@ echo
 #
 echo
 #
-    # iconen weghalen en terugzetten
-        read -p "iconen? j/n" -n 1 -r
+    # remove and restore customized icons themes
+        read -p "back to desktkop wide... icons? j/n" -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
                
         # iconen weghalen
-            read -p "eerst oude weghalen? j/n" -n 1 -r
+            read -p "first remove current customized icon themes? j/n" -n 1 -r
             echo    # (optional) move to a new line
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
@@ -269,7 +192,7 @@ echo
                 clear
             fi
         # iconen terugzetten
-            read -p "nieuwe iconen erin? j/n " -n 1 -r
+            read -p "put in backuped icons? j/n " -n 1 -r
             echo    # (optional) move to a new line
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
@@ -284,7 +207,7 @@ echo
 echo
 #
     # en terugzetten
-        read -p "alle instellingen weer terugzetten? j/n (advies: ja) " -n 1 -r
+        read -p "global desktop settins j/n " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
@@ -306,12 +229,5 @@ echo
             # plasma
                 mkdir -p ~/.local/share/plasma/
                 cp -r conf/apps/kde/plasma/* ~/.local/share/plasma/
-            #
-            # globaal thema Vesuvius
-                    read -p "Globaal thema Vesuvius toepassen? j/n " -n 1 -r
-                    echo    # (optional) move to a new line
-                    if [[ $REPLY =~ ^[YyJj]$ ]]
-                    then
-                        lookandfeeltool -a Vesuvius
-                    fi
+            fi
         fi

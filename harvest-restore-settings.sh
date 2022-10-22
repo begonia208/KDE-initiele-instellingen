@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # leegmaken
-       read -p "mappen leegmaken j/n " -n 1 -r
+       read -p "clear previous backuped folder system j/n " -n 1 -r
        echo    # (optional) move to a new line
        if [[ $REPLY =~ ^[YyJj]$ ]]
        then
           rm -r conf/
        fi
-read -r -p "Druk op Enter om door te gaan"
+read -r -p "press Enter to continue"
 
 mkdir extra/
 mkdir -p conf/apps/audacious/Skins/
@@ -80,7 +80,7 @@ cp -r ~/.local/share/color-schemes/* conf/artwork/color-schemes/
 cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
 
 # iconen
-        read -p "iconen bewaren? j/n " -n 1 -r
+        read -p "backup custom icons? j/n " -n 1 -r
         echo    # (optional) move to a new line
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
