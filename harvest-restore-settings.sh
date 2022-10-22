@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # leegmaken
-       read -p "clear previous backuped folder system j/n " -n 1 -r
+       read -p "clear previously backuped folder system j/n " -n 1 -r
        echo    # (optional) move to a new line
        if [[ $REPLY =~ ^[YyJj]$ ]]
        then
