@@ -100,16 +100,3 @@ cp -r ~/.local/share/plasma/* conf/apps/kde/plasma/
 # desktopfiles
 cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
