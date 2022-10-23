@@ -85,10 +85,11 @@ cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
             cd ~/.local/share/icons/ || exit
-            tar -zcvf icons.tar.gz ./* 
+            tar -cvf icons.tar  ./* 
+            zstd --ultra -22 icons.tar
             cd -
-            mv ~/.local/share/icons/icons.tar.gz ./
-            mv icons.tar.gz extra/
+            mv ~/.local/share/icons/icons.tar.zst ./
+            mv icons.tar.zst extra/
             fi
             
 # plasma            

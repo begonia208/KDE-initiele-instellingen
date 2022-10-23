@@ -197,7 +197,7 @@ echo
             if [[ $REPLY =~ ^[YyJj]$ ]]
             then
                 mkdir ~/.local/share/icons
-                tar -xvf extra/icons.tar.gz -C ~/.local/share/icons/
+                tar -xvf extra/icons.tar.zst -C ~/.local/share/icons/
                 # tar -xf conf/artwork/icons.tar.xz -C ~/.local/share/icons/
                 # rm conf/artwork/icons.tar
                 # ook: suru-plus https://github.com/gusbemacbe/suru-plus
