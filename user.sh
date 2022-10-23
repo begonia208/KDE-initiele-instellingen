@@ -73,7 +73,7 @@ clear
                 then
                     rm -r ~/.local/share/kactivitymanagerd/*
                     mkdir -p ~/.local/share/kactivitymanagerd/
-                    cp -r conf/apps/kickoff/* ~/.local/share/kactivitymanagerd/
+                    tar -xvf conf/apps/kickoff/kickoff.tar.zst -C ~/.local/share/kactivitymanagerd/
                 fi
         #
         echo
@@ -198,8 +198,6 @@ echo
             then
                 mkdir ~/.local/share/icons
                 tar -xvf extra/icons.tar.zst -C ~/.local/share/icons/
-                # tar -xf conf/artwork/icons.tar.xz -C ~/.local/share/icons/
-                # rm conf/artwork/icons.tar
                 # ook: suru-plus https://github.com/gusbemacbe/suru-plus
             fi
         fi

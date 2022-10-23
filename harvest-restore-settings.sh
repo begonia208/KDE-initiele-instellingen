@@ -35,15 +35,17 @@ cp ~/.config/* conf/rc/
 cp ~/.config/audacious/config/* conf/apps/audacious/
 cp -r ~/.local/share/audacious/Skins/* conf/apps/audacious/Skins/
 
-# kickoff favorieten
-cp -r ~/.local/share/kactivitymanagerd/* conf/apps/kickoff/
+cd ~/.local/share/kactivitymanagerd/ || exit
+tar -cvf kickoff.tar  ./* 
+zstd --ultra -22 kickoff.tar
+rm kickoff.tar
+cd -
+mv ~/.local/share/kactivitymanagerd/kickoff.tar.zst ./
+mv kickoff.tar.zst conf/apps/kickoff/
 
 # lo
 cp ~/.config/libreoffice/4/user/template/* conf/apps/lo/templates/
 cp ~/.config/libreoffice/4/user/registrymodifications.xcu conf/apps/lo/
-
-# kickoff favorieten
-cp -r ~/.local/share/kactivitymanagerd/* conf/apps/kickoff/
 
 # dolphin
 cp ~/.local/share/dolphin/dolphinstaterc conf/apps/dolphin/
