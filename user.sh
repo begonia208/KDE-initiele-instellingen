@@ -1,6 +1,6 @@
 #!/bin/bash
-#
-#
+
+
 clear
     # eerste keer op deze computer
     #           
