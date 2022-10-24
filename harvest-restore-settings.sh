@@ -35,6 +35,7 @@ cp ~/.config/* conf/rc/
 cp ~/.config/audacious/config/* conf/apps/audacious/
 cp -r ~/.local/share/audacious/Skins/* conf/apps/audacious/Skins/
 
+# kickoff favorites
 cd ~/.local/share/kactivitymanagerd/ || exit
 tar -cvf kickoff.tar  ./* 
 zstd --ultra -22 kickoff.tar
