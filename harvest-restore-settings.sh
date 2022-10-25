@@ -18,7 +18,7 @@ mkdir conf/apps/kickoff/
 mkdir conf/apps/konsole/
 mkdir conf/apps/krusader/
 mkdir -p conf/apps/kde/plasma/
-mkdir -p conf/apps/lo/templates/
+mkdir -p conf/apps/lo/
 mkdir conf/apps/SpeedCrunch/
 
 mkdir -p conf/artwork/aurorae/
