@@ -224,4 +224,4 @@ echo
                 mkdir -p ~/.local/share/plasma/
                 cp -r conf/apps/kde/plasma/* ~/.local/share/plasma/
             fi
-        fi
+
