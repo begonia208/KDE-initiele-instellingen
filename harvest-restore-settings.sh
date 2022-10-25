@@ -45,8 +45,13 @@ mv ~/.local/share/kactivitymanagerd/kickoff.tar.zst ./
 mv kickoff.tar.zst conf/apps/kickoff/
 
 # lo
-cp ~/.config/libreoffice/4/user/template/* conf/apps/lo/templates/
-cp ~/.config/libreoffice/4/user/registrymodifications.xcu conf/apps/lo/
+cd ~/.config/libreoffice/ || exit
+tar -cvf libreoffice.tar  ./* 
+zstd --ultra -22 libreoffice.tar
+rm libreoffice.tar
+cd -
+mv ~/.config/libreoffice/libreoffice.tar.zst ./
+mv libreoffice.tar.zst conf/apps/lo/
 
 # dolphin
 cp ~/.local/share/dolphin/dolphinstaterc conf/apps/dolphin/
@@ -90,6 +95,7 @@ cp -r ~/.local/share/aurorae/themes/* conf/artwork/aurorae/
             cd ~/.local/share/icons/ || exit
             tar -cvf icons.tar  ./* 
             zstd --ultra -22 icons.tar
+            rm icons.tar
             cd -
             mv ~/.local/share/icons/icons.tar.zst ./
             mv icons.tar.zst extra/
@@ -100,4 +106,17 @@ cp -r ~/.local/share/plasma/* conf/apps/kde/plasma/
 
 # desktopfiles
 cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
+
+
+
+
+
+
+
+
+
+
+
+
+
 

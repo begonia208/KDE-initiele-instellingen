@@ -1,6 +1,6 @@
 #!/bin/bash
-
-
+#
+#
 clear
     # eerste keer op deze computer
     #           
@@ -17,12 +17,8 @@ clear
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                    mkdir -p ~/.config/libreoffice/4/user/template/
-                    mkdir -p ~/.config/libreofficedev/4/user/template/
-                    cp conf/apps/lo/registrymodifications.xcu ~/.config/libreoffice/4/user/
-                    cp conf/apps/lo/registrymodifications.xcu ~/.config/libreofficedev/4/user/
-                    cp conf/apps/lo/templates/* ~/.config/libreoffice/4/user/template/
-                    cp conf/apps/lo/templates/* ~/.config/libreofficedev/4/user/template/
+                    mkdir -p ~/.config/libreoffice/
+                    tar -xvf conf/apps/lo/libreoffice.tar.zst -C ~/.config/libreoffice/
                 fi
         #
         echo
