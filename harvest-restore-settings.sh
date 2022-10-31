@@ -18,21 +18,29 @@ mkdir conf/apps/kickoff/
 mkdir conf/apps/konsole/
 mkdir conf/apps/krusader/
 mkdir -p conf/apps/kde/plasma/
-mkdir -p conf/apps/lo/
-mkdir conf/apps/SpeedCrunch/
+# mkdir -p conf/apps/lo/
+# mkdir conf/apps/SpeedCrunch/
 
 mkdir -p conf/artwork/aurorae/
 mkdir conf/artwork/color-schemes/
 
-mkdir conf/rc/
+mkdir conf/config/
 
 # harvesting
 
 # alle rc's
-cp ~/.config/* conf/rc/
+# cp ~/.config/* conf/rc/
+cd ~/ || exit
+tar -cvf config.tar  .config/ 
+zstd --ultra -22 config.tar
+rm config.tar
+cd -
+mv ~/config.tar.zst ./
+mv config.tar.zst conf/config/
+
 
 # audacious
-cp ~/.config/audacious/config/* conf/apps/audacious/
+# cp ~/.config/audacious/config/* conf/apps/audacious/
 cp -r ~/.local/share/audacious/Skins/* conf/apps/audacious/Skins/
 
 # kickoff favorites
@@ -44,18 +52,9 @@ cd -
 mv ~/.local/share/kactivitymanagerd/kickoff.tar.zst ./
 mv kickoff.tar.zst conf/apps/kickoff/
 
-# lo
-cd ~/.config/libreoffice/ || exit
-tar -cvf libreoffice.tar  ./* 
-zstd --ultra -22 libreoffice.tar
-rm libreoffice.tar
-cd -
-mv ~/.config/libreoffice/libreoffice.tar.zst ./
-mv libreoffice.tar.zst conf/apps/lo/
-
 # dolphin
 cp ~/.local/share/dolphin/dolphinstaterc conf/apps/dolphin/
-cp ~/.config/session/dolphin_dolphin_dolphin conf/apps/dolphin/
+# cp ~/.config/session/dolphin_dolphin_dolphin conf/apps/dolphin/
 cp ~/.local/share/dolphin/view_properties/global/.directory conf/apps/dolphin/directory
 cp -r ~/.local/share/kservices5/ServiceMenus/* conf/apps/dolphin/ServiceMenus/
 cp ~/.local/share/kxmlgui5/dolphin/dolphinui.rc conf/apps/dolphin/
@@ -64,7 +63,7 @@ cp ~/.local/share/kxmlgui5/dolphin/dolphinui.rc conf/apps/dolphin/
 cp -r ~/.local/share/konsole/* conf/apps/konsole/
 
 # gimp
-cp ~/.config/GIMP/2.10/gimprc conf/rc/
+# cp ~/.config/GIMP/2.10/gimprc conf/rc/
 
 # snap mappen verbergen
 
@@ -75,7 +74,7 @@ cp -r ~/.local/share/krusader/* conf/apps/krusader/
 cp -r ~/.local/share/k3b/* conf/apps/k3b/
 
 # SpeedCrunch
-cp ~/.config/SpeedCrunch/SpeedCrunch.ini conf/apps/SpeedCrunch/
+# cp ~/.config/SpeedCrunch/SpeedCrunch.ini conf/apps/SpeedCrunch/
 
 # desktopfiles
 cp -r ~/.local/share/applications/* conf/apps/desktopfiles/

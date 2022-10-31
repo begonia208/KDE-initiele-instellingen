@@ -13,13 +13,7 @@ clear
         echo
         #
             # libreoffice registrymodifications
-                read -p "libreoffice registrymodifications j/n " -n 1 -r
-                echo    # (optional) move to a new line
-                if [[ $REPLY =~ ^[YyJj]$ ]]
-                then
-                    mkdir -p ~/.config/libreoffice/
-                    tar -xvf conf/apps/lo/libreoffice.tar.zst -C ~/.config/libreoffice/
-                fi
+                # tar -xvf conf/apps/lo/libreoffice.tar.zst -C ~/.config/libreoffice/
         #
         echo
         #
@@ -30,7 +24,7 @@ clear
                 then
                     mkdir -p  ~/.local/share/audacious/Skins/
                     cp -r conf/apps/audacious/* ~/.local/share/audacious/
-                    mkdir ~/.config/audacious/
+                    # mkdir ~/.config/audacious/
                     cp -r conf/apps/audacious/Skins/ ~/.local/share/audacious/
                 fi
         #
@@ -45,24 +39,13 @@ clear
                 rm -rv ~/.local/share/messageviewer/themes/*
                 mkdir -p ~/.local/share/messageviewer/themes/
                 tar -xf extra/kmail/material-reloaded.tar.gz -C ~/.local/share/messageviewer/themes
-                cp extra/kmail/kmail2rc ~/.config/
-                cp extra/kmail/emaildefaults ~/.config/
+                # cp extra/kmail/kmail2rc ~/.config/
+                # cp extra/kmail/emaildefaults ~/.config/
                 fi
         #
         echo
         #
-            # falkon profiel P
-                read -p "falkon-profiel j/n " -n 1 -r
-                echo    # (optional) move to a new line
-                if [[ $REPLY =~ ^[YyJj]$ ]]
-                then
-                    rm -r ~/.config/falkon/
-                    tar -xf extra/falkon.tar.gz -C ~/.config/
-                fi
-       #
-        echo
-        # 
-            # kickoff favorieten
+             # kickoff favorieten
                 read -p "Kickoff favorites j/n " -n 1 -r
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
@@ -78,9 +61,9 @@ clear
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                    rm ~/.config/dolphinrc
+                    # rm ~/.config/dolphinrc
                     rm ~/.local/share/dolphin/dolphinstaterc
-                    rm ~/.config/session/dolphin_dolphin_dolphin
+                    # rm ~/.config/session/dolphin_dolphin_dolphin
                     rm ~/.local/share/user-places.xbel
                     rm ~/.local/share/dolphin/view_properties/global/.directory
                     rm -rv ~/.local/share/kservices5/ServiceMenus/*
@@ -95,8 +78,8 @@ clear
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
                 # /.config/dolphinrc  
-                    rm ~/.config/dolphinrc
-                    cp conf/rc/dolphinrc ~/.config/
+                    # rm ~/.config/dolphinrc
+                    # cp conf/rc/dolphinrc ~/.config/
 
                 # /.local/share/dolphin/dolphinstaterc
                     mkdir ~/.local/share/dolphin/
@@ -104,9 +87,9 @@ clear
                     cp conf/apps/dolphin/dolphinstaterc ~/.local/share/dolphin/
                  
                 # /.config/session/dolphin_dolphin_dolphin 
-                    rm ~/.config/session/dolphin_dolphin_dolphin
-                    mkdir ~/.config/session/
-                    cp conf/apps/dolphin/dolphin_dolphin_dolphin ~/.config/session/
+                    # rm ~/.config/session/dolphin_dolphin_dolphin
+                    # mkdir ~/.config/session/
+                    # cp conf/apps/dolphin/dolphin_dolphin_dolphin ~/.config/session/
                     sed -i "s/pieter/$USER/g" ~/.config/session/dolphin_dolphin_dolphin
 
                 # /.local/share/dolphin/view_properties/global/.directory    
@@ -135,8 +118,8 @@ clear
                 then
                     rm -rv ~/.local/share/konsole/*
                     cp -r conf/apps/konsole/* ~/.local/share/konsole/
-                    rm -v ~/.config/konsolerc
-                    cp cp conf/rc/konsolerc ~/.config
+                    # rm -v ~/.config/konsolerc
+                    # cp cp conf/rc/konsolerc ~/.config
                 fi
         #
         echo
@@ -146,10 +129,10 @@ clear
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                cp conf/rc/kontactrc ~/.config/
-                cp conf/rc/korganizerrc ~/.config
-                mkdir -p ~/.config/GIMP/2.10/
-                cp conf/rc/gimprc ~/.config/GIMP/2.10/
+                # cp conf/rc/kontactrc ~/.config/
+                # cp conf/rc/korganizerrc ~/.config
+                # mkdir -p ~/.config/GIMP/2.10/
+                # cp conf/rc/gimprc ~/.config/GIMP/2.10/
             # snap-mappen verbergen
                 touch ~/.hidden
                 echo 'lost+found' >> ~/.hidden
@@ -159,15 +142,15 @@ clear
             # krusader
                 rm -r ~/.local/share/krusader/
                 cp -r conf/apps/krusader/* ~/.local/share/
-                cp conf/rc/krusaderrc ~/.config/
+                # cp conf/rc/krusaderrc ~/.config/
                 sed -i "s/gebruiker/$USER/g" ~/.config/krusaderrc
             # k3b
                 rm -r ~/.local/share/k3b/
                 mkdir ~/.local/share/k3b/
                 cp -r conf/apps/k3b/* ~/.local/share/k3b/
             # SpeedCrunch
-                mkdir ~/.config/SpeedCrunch/
-                cp conf/apps/SpeedCrunch/SpeedCrunch.ini ~/.config/SpeedCrunch/
+                # mkdir ~/.config/SpeedCrunch/
+                # cp conf/apps/SpeedCrunch/SpeedCrunch.ini ~/.config/SpeedCrunch/
                 fi
                 fi
 #
@@ -207,7 +190,9 @@ echo
         then
             #
             # klein spul
-                cp conf/rc/* ~/.config/
+                # cp conf/rc/* ~/.config/
+                rm -rv ~/.config/
+                tar -xvf conf/config/config.tar.zst -C ~/
             #
             # desktopfiles
                 cp -r conf/apps/desktopfiles ~/.local/share/applications/
