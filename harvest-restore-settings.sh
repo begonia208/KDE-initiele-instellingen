@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # leegmaken
-       read -p "clear previously backuped folder system j/n " -n 1 -r
+       read -p "clear previously backuped folder system to make an new backup? j/n " -n 1 -r
        echo    # (optional) move to a new line
        if [[ $REPLY =~ ^[YyJj]$ ]]
        then
@@ -18,8 +18,6 @@ mkdir conf/apps/kickoff/
 mkdir conf/apps/konsole/
 mkdir conf/apps/krusader/
 mkdir -p conf/apps/kde/plasma/
-# mkdir -p conf/apps/lo/
-# mkdir conf/apps/SpeedCrunch/
 
 mkdir -p conf/artwork/aurorae/
 mkdir conf/artwork/color-schemes/
@@ -28,8 +26,6 @@ mkdir conf/config/
 
 # harvesting
 
-# alle rc's
-# cp ~/.config/* conf/rc/
 cd ~/ || exit
 tar -cvf config.tar  .config/ 
 zstd --ultra -22 config.tar
@@ -40,7 +36,6 @@ mv config.tar.zst conf/config/
 
 
 # audacious
-# cp ~/.config/audacious/config/* conf/apps/audacious/
 cp -r ~/.local/share/audacious/Skins/* conf/apps/audacious/Skins/
 
 # kickoff favorites
@@ -62,19 +57,11 @@ cp ~/.local/share/kxmlgui5/dolphin/dolphinui.rc conf/apps/dolphin/
 # konsole
 cp -r ~/.local/share/konsole/* conf/apps/konsole/
 
-# gimp
-# cp ~/.config/GIMP/2.10/gimprc conf/rc/
-
-# snap mappen verbergen
-
 # krusader
 cp -r ~/.local/share/krusader/* conf/apps/krusader/
 
 # k3b
 cp -r ~/.local/share/k3b/* conf/apps/k3b/
-
-# SpeedCrunch
-# cp ~/.config/SpeedCrunch/SpeedCrunch.ini conf/apps/SpeedCrunch/
 
 # desktopfiles
 cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
@@ -105,17 +92,3 @@ cp -r ~/.local/share/plasma/* conf/apps/kde/plasma/
 
 # desktopfiles
 cp -r ~/.local/share/applications/* conf/apps/desktopfiles/
-
-
-
-
-
-
-
-
-
-
-
-
-
-

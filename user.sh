@@ -7,7 +7,7 @@ clear
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
-             rm r
+             rm -rv ~/.config/
              tar -xvf conf/config/config.tar.zst -C ~/
              fi
 #
