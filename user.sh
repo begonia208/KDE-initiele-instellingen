@@ -2,18 +2,23 @@
 #
 #
 clear
+   # put .config back
+        read -p ".config-folder? j/n " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[YyJj]$ ]]
+        then
+             rm r
+             tar -xvf conf/config/config.tar.zst -C ~/
+             fi
+#
+echo
+#
     # eerste keer op deze computer
     #           
         read -p "Restore cutomizations of user applications? j/n " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
-        #
-        #
-        echo
-        #
-            # libreoffice registrymodifications
-                # tar -xvf conf/apps/lo/libreoffice.tar.zst -C ~/.config/libreoffice/
         #
         echo
         #
@@ -24,7 +29,6 @@ clear
                 then
                     mkdir -p  ~/.local/share/audacious/Skins/
                     cp -r conf/apps/audacious/* ~/.local/share/audacious/
-                    # mkdir ~/.config/audacious/
                     cp -r conf/apps/audacious/Skins/ ~/.local/share/audacious/
                 fi
         #
@@ -39,8 +43,6 @@ clear
                 rm -rv ~/.local/share/messageviewer/themes/*
                 mkdir -p ~/.local/share/messageviewer/themes/
                 tar -xf extra/kmail/material-reloaded.tar.gz -C ~/.local/share/messageviewer/themes
-                # cp extra/kmail/kmail2rc ~/.config/
-                # cp extra/kmail/emaildefaults ~/.config/
                 fi
         #
         echo
@@ -77,19 +79,12 @@ clear
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                # /.config/dolphinrc  
-                    # rm ~/.config/dolphinrc
-                    # cp conf/rc/dolphinrc ~/.config/
-
                 # /.local/share/dolphin/dolphinstaterc
                     mkdir ~/.local/share/dolphin/
                     rm ~/.local/share/dolphin/dolphinstaterc
                     cp conf/apps/dolphin/dolphinstaterc ~/.local/share/dolphin/
                  
                 # /.config/session/dolphin_dolphin_dolphin 
-                    # rm ~/.config/session/dolphin_dolphin_dolphin
-                    # mkdir ~/.config/session/
-                    # cp conf/apps/dolphin/dolphin_dolphin_dolphin ~/.config/session/
                     sed -i "s/pieter/$USER/g" ~/.config/session/dolphin_dolphin_dolphin
 
                 # /.local/share/dolphin/view_properties/global/.directory    
@@ -118,8 +113,6 @@ clear
                 then
                     rm -rv ~/.local/share/konsole/*
                     cp -r conf/apps/konsole/* ~/.local/share/konsole/
-                    # rm -v ~/.config/konsolerc
-                    # cp cp conf/rc/konsolerc ~/.config
                 fi
         #
         echo
@@ -129,10 +122,6 @@ clear
                 echo    # (optional) move to a new line
                 if [[ $REPLY =~ ^[YyJj]$ ]]
                 then
-                # cp conf/rc/kontactrc ~/.config/
-                # cp conf/rc/korganizerrc ~/.config
-                # mkdir -p ~/.config/GIMP/2.10/
-                # cp conf/rc/gimprc ~/.config/GIMP/2.10/
             # snap-mappen verbergen
                 touch ~/.hidden
                 echo 'lost+found' >> ~/.hidden
@@ -142,15 +131,11 @@ clear
             # krusader
                 rm -r ~/.local/share/krusader/
                 cp -r conf/apps/krusader/* ~/.local/share/
-                # cp conf/rc/krusaderrc ~/.config/
                 sed -i "s/gebruiker/$USER/g" ~/.config/krusaderrc
             # k3b
                 rm -r ~/.local/share/k3b/
                 mkdir ~/.local/share/k3b/
                 cp -r conf/apps/k3b/* ~/.local/share/k3b/
-            # SpeedCrunch
-                # mkdir ~/.config/SpeedCrunch/
-                # cp conf/apps/SpeedCrunch/SpeedCrunch.ini ~/.config/SpeedCrunch/
                 fi
                 fi
 #
@@ -189,11 +174,6 @@ echo
         if [[ $REPLY =~ ^[YyJj]$ ]]
         then
             #
-            # klein spul
-                # cp conf/rc/* ~/.config/
-                rm -rv ~/.config/
-                tar -xvf conf/config/config.tar.zst -C ~/
-            #
             # desktopfiles
                 cp -r conf/apps/desktopfiles ~/.local/share/applications/
             #
@@ -203,7 +183,7 @@ echo
             #
             # vensterdecoraties
                 mkdir -p ~/.local/share/aurorae/themes/
-                cp conf/artwork/aurorae/*  ~/.local/share/aurorae/themes/
+                cp -r conf/artwork/aurorae/*  ~/.local/share/aurorae/themes/
             #
             # plasma
                 mkdir -p ~/.local/share/plasma/
